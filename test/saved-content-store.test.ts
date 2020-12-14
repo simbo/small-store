@@ -33,9 +33,6 @@ function createSavedContentStore(): Store<SavedContentState, SavedContentAction,
       state.saved = false;
       return state;
     },
-    [SavedContentAction.StartSave]: () => state => {
-      return state;
-    },
     [SavedContentAction.FinishSave]: payload => state => {
       state.saved = state.content === payload.content;
       return state;
