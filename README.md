@@ -17,6 +17,38 @@
 
 Documentation is in progress. See tests until it's finished.
 
+## Development
+
+Requirements: node.js >=14, yarn >=1.22
+
+```sh
+# build using microbundle
+yarn build
+# watch and rebuild
+yarn build:watch
+# lint using prettier and eslint
+yarn lint
+# test using jest
+yarn test
+# watch and retest
+yarn test:watch
+# open coverage in default browser
+yarn coverage:open
+```
+
+### Docs
+
+Requirements: docker
+
+```sh
+# pull slate image
+docker pull slatedocs/slate
+# serve docs on localhost:4567
+yarn docs:serve
+# build docs to ./docs-build
+yarn docs:build
+```
+
 ## License and Author
 
 [MIT &copy; Simon Lepel](http://simbo.mit-license.org/)
