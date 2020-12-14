@@ -1,6 +1,6 @@
 {
   "name": "small-store",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small, immutable, reactive and framework agnostic state store under 2KB powered by rxjs and immer with full typescript support. To be used with vanilla, react, preact, angular, vue or whatever you like.",
   "author": "Simon Lepel <simbo@simbo.de> (https://simbo.de)",
   "license": "MIT",
