@@ -1,0 +1,59 @@
+{
+  "generalConfiguration": {
+    "exclude": [".*\\.d\\.ts"],
+    "sortOnBeforeSave": true
+  },
+  "importStringConfiguration": {
+    "hasSemicolon": true,
+    "maximumNumberOfImportExpressionsPerLine": {
+      "count": 80,
+      "type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne"
+    },
+    "numberOfEmptyLinesAfterAllImports": 1,
+    "quoteMark": "single",
+    "spacingPerImportExpression": {
+      "afterComma": 1,
+      "afterStartingBracket": 1,
+      "beforeComma": 0,
+      "beforeEndingBracket": 1
+    },
+    "tabSize": 2,
+    "tabType": "space",
+    "trailingComma": "none"
+  },
+  "sortConfiguration": {
+    "importMembers": {
+      "direction": "asc",
+      "order": "caseInsensitive"
+    },
+    "importPaths": {
+      "direction": "asc",
+      "order": "caseInsensitive"
+    },
+    "joinImportPaths": true,
+    "customOrderingRules": {
+      "defaultNumberOfEmptyLinesAfterGroup": 1,
+      "defaultOrderLevel": 10,
+      "disableDefaultOrderSort": false,
+      "rules": [
+        {
+          "type": "importMember",
+          "orderLevel": 10,
+          "disableSort": false
+        },
+        {
+          "regex": "^src($|\\/)",
+          "orderLevel": 20
+        },
+        {
+          "regex": "^[@a-z]",
+          "orderLevel": 10
+        },
+        {
+          "regex": "^[.]{1,2}($|\\/)",
+          "orderLevel": 30
+        }
+      ]
+    }
+  }
+}

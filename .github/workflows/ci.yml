@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: 🛎  Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: 📄  Read .nvmrc
+        id: nvm
+        run: echo "::set-output name=version::$(cat .nvmrc)"
+
+      - name: 🛠  Setup node.js
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '${{ steps.nvm.outputs.version }}'
+
+      - name: 📦  Install
+        run: yarn install
+
+      - name: 🕵️  Lint
+        run: yarn lint
+
+      - name: 👷‍♂️  Build
+        run: yarn build
+
+      - name: 🧪  Test
+        run: yarn test
+
+      - name: 💯  Report to Coveralls
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 👀  Check for version update
+        id: version
+        uses: EndBug/version-check@v1
+        with:
+          file-url: https://unpkg.com/small-store/package.json
+          static-checking: localIsNew
+
+      - name: 📋  Get Commits since last Release
+        if: steps.version.outputs.changed == 'true'
+        uses: simbo/changes-since-last-release-action@v1
+        id: changes
+
+      - run: echo ${{steps.changes.outputs.logs}}
+
+      # - name: 🎁  Create tag and GitHub Release
+      #   if: steps.version.outputs.changed == 'true'
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ steps.version.outputs.version }}
+      #     release_name: Release ${{ steps.version.outputs.version }}
+      #     body: |
+      #       Changes since ${{ steps.changes.outputs.last-tag }}:
+      #       ${{ steps.changes.outputs.log }}
+
+      # - name: 🚚  Publish to npm
+      #   if: steps.version.outputs.changed == 'true'
+      #   uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_AUTH_TOKEN }}

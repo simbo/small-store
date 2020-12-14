@@ -1,0 +1,10 @@
+{
+  "prettier.arrowParens": "avoid",
+  "prettier.configPath": "./.prettierrc",
+  "prettier.packageManager": "yarn",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.singleQuote": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.lintTask.options": " -c .eslintrc.js --ext .ts,.js ."
+}
