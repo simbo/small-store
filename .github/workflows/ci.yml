@@ -52,8 +52,6 @@ jobs:
         uses: simbo/changes-since-last-release-action@v1
         id: changes
 
-      - run: echo ${{steps.changes.outputs.logs}}
-
       - name: 🎁  Create tag and GitHub Release
         if: steps.version.outputs.changed == 'true'
         uses: actions/create-release@v1
