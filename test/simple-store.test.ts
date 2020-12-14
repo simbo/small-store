@@ -20,19 +20,19 @@ interface SimplePayload {
 function createSimpleStore(): Store<SimpleState, SimpleAction, SimplePayload> {
   const initialState: SimpleState = {};
 
-  const counterActions: Actions<SimpleState, SimpleAction, SimplePayload> = {
+  const simpleActions: Actions<SimpleState, SimpleAction, SimplePayload> = {
     [SimpleAction.Update]: payload => payload
   };
 
-  return new Store<SimpleState, SimpleAction, SimplePayload>(initialState, counterActions);
+  return new Store<SimpleState, SimpleAction, SimplePayload>(initialState, simpleActions);
 }
 
-test('[counter store] instantiation', () => {
+test('[simple store] instantiation', () => {
   const store = createSimpleStore();
   expect(store).toBeTruthy();
 });
 
-test('[counter store] state', done => {
+test('[simple store] state', done => {
   const store = createSimpleStore();
   const results = [{}, { foo: 'bar' }, { foo: 'bar', one: true }];
   let i = 0;
@@ -46,7 +46,7 @@ test('[counter store] state', done => {
   store.dispatch(SimpleAction.Update, { one: true });
 });
 
-test('[counter store] actions', done => {
+test('[simple store] actions', done => {
   const store = createSimpleStore();
   const results = [
     {
