@@ -6,7 +6,7 @@ export type ActionPayload<ACTION extends string> = {
   [KEY in ACTION]?: { [key: string]: any };
 };
 
-export interface ActionMeta<ACTION extends string, PAYLOAD extends ActionPayload<ACTION>> {
+export interface ActionMeta<ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> {
   name: ACTION;
   payload: PAYLOAD[ACTION];
 }
@@ -19,13 +19,13 @@ export type ActionHandler<STATE, PAYLOAD> =
   | ((payload: PAYLOAD | never) => (state: STATE) => STATE)
   | ((payload: PAYLOAD | never) => Partial<STATE>);
 
-export type EffectHandler<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION>> = (
+export type EffectHandler<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = (
   action: ActionMeta<ACTION, PAYLOAD>,
   state: STATE,
   dispatch: (action: ACTION, payload?: PAYLOAD[ACTION]) => void
 ) => void;
 
-export type Effects<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION>> = {
+export type Effects<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = {
   [KEY in ACTION]?: EffectHandler<STATE, ACTION, PAYLOAD>;
 };
 
