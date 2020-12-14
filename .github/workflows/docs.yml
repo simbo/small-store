@@ -1,0 +1,26 @@
+name: Docs Deploy
+
+on:
+  push:
+    branches: [docs]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: 🛎  Checkout
+        uses: actions/checkout@v2
+
+      - name: 📦  Pull Docker Image
+        run: docker pull slatedocs/slate
+
+      - name: 👷‍♂️  Build
+        run: docker run --rm --name slate -v $(pwd)/docs-build:/srv/slate/build -v $(pwd)/docs:/srv/slate/source slatedocs/slate
+
+      - name: 🚚  Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          BRANCH: gh-pages
+          FOLDER: docs-build
+          CLEAN: true

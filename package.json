@@ -37,6 +37,8 @@
     "clean:coverage": "rm -rf ./coverage",
     "clean:docs": "rm -rf ./docs-build",
     "coverage:open": "open ./coverage/lcov-report/index.html",
+    "docs:build": "docker run --rm --name slate -v $(pwd)/docs-build:/srv/slate/build -v $(pwd)/docs:/srv/slate/source slatedocs/slate",
+    "docs:serve": "docker run --rm --name slate -p 4567:4567 -v $(pwd)/docs:/srv/slate/source slatedocs/slate serve",
     "lint": "yarn run lint:prettier && yarn run lint:eslint",
     "lint:eslint": "eslint -c .eslintrc.js --ext .ts,.js .",
     "lint:prettier": "prettier --check \"**/*.{ts,js,md,json,yml}\"",
