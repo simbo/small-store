@@ -1,11 +1,9 @@
 # 🗃 Small Store
 
 [![npm Package Version](https://img.shields.io/npm/v/small-store?)](https://www.npmjs.com/package/small-store)
-[![npm Downloads](https://img.shields.io/npm/dw/small-store?color=gold)](https://www.npmjs.com/package/small-store)
 [![Package Dependencies](https://img.shields.io/david/simbo/small-store?label=deps)](https://www.npmjs.com/package/small-store?activeTab=dependencies)
 [![Coveralls github](https://img.shields.io/coveralls/github/simbo/small-store)](https://coveralls.io/github/simbo/small-store)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/simbo/small-store/CI/master)](https://github.com/simbo/small-store/actions?query=workflow%3ACI)
-[![GitHub last Commit](https://img.shields.io/github/last-commit/simbo/small-store/master)](https://github.com/simbo/small-store/commits/master)
 [![GitHub Repo](https://img.shields.io/badge/repo-public-87ceeb)](https://github.com/simbo/small-store)
 [![License MIT](https://img.shields.io/badge/license-MIT-4cc552)](http://simbo.mit-license.org/)
 

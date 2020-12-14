@@ -54,20 +54,20 @@ jobs:
 
       - run: echo ${{steps.changes.outputs.logs}}
 
-      # - name: 🎁  Create tag and GitHub Release
-      #   if: steps.version.outputs.changed == 'true'
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: ${{ steps.version.outputs.version }}
-      #     release_name: Release ${{ steps.version.outputs.version }}
-      #     body: |
-      #       Changes since ${{ steps.changes.outputs.last-tag }}:
-      #       ${{ steps.changes.outputs.log }}
+      - name: 🎁  Create tag and GitHub Release
+        if: steps.version.outputs.changed == 'true'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          release_name: Release ${{ steps.version.outputs.version }}
+          body: |
+            Changes since ${{ steps.changes.outputs.last-tag }}:
+            ${{ steps.changes.outputs.log }}
 
-      # - name: 🚚  Publish to npm
-      #   if: steps.version.outputs.changed == 'true'
-      #   uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: 🚚  Publish to npm
+        if: steps.version.outputs.changed == 'true'
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
