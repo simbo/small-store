@@ -34,6 +34,8 @@ yarn test
 yarn test:watch
 # open coverage in default browser
 yarn coverage:open
+# check everything
+yarn preflight
 ```
 
 ### Docs

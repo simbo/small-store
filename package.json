@@ -45,6 +45,7 @@
     "prebuild": "yarn run clean",
     "prebuild:watch": "yarn run clean",
     "predocs:build": "yarn run clean:docs",
+    "preflight": "yarn run lint && yarn run test && yarn run build && yarn run docs:build",
     "pretest": "yarn run clean:coverage",
     "test": "jest",
     "test:watch": "yarn run test --watch"
