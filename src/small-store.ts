@@ -11,13 +11,13 @@ export interface ActionMeta<ACTION extends string, PAYLOAD extends ActionPayload
   payload: PAYLOAD[ACTION];
 }
 
-export type Actions<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = {
-  [KEY in ACTION]?: ActionHandler<STATE, PAYLOAD[KEY]>;
-};
-
 export type ActionHandler<STATE, PAYLOAD> =
   | ((payload: PAYLOAD | never) => (state: STATE) => STATE)
   | ((payload: PAYLOAD | never) => Partial<STATE>);
+
+export type Actions<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = {
+  [KEY in ACTION]?: ActionHandler<STATE, PAYLOAD[KEY]>;
+};
 
 export type EffectHandler<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = (
   action: ActionMeta<ACTION, PAYLOAD>,
@@ -29,8 +29,10 @@ export type Effects<STATE, ACTION extends string, PAYLOAD extends ActionPayload<
   [KEY in ACTION]?: EffectHandler<STATE, ACTION, PAYLOAD>;
 };
 
+export type Selector<STATE> = (state: STATE) => any;
+
 export interface Selectors<STATE> {
-  [key: string]: (state: STATE) => any;
+  [key: string]: Selector<STATE>;
 }
 
 export class Store<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> {
