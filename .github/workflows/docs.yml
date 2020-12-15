@@ -15,6 +15,9 @@ jobs:
       - name: 📦  Pull Docker Image
         run: docker pull slatedocs/slate
 
+      - name: 📂  Create Folder for docs-build
+        run: rm -rf docs-build && mkdir docs-build
+
       - name: 👷‍♂️  Build
         run: docker run --rm --name slate -v $(pwd)/docs-build:/srv/slate/build -v $(pwd)/docs:/srv/slate/source slatedocs/slate
 
