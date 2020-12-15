@@ -15,8 +15,8 @@
 
 ## Documentation
 
-Visit [simbo.codes/small-store](https://simbo.codes/small-store/) to read the
-documentation and the examples.
+Visit **[simbo.codes/small-store](https://simbo.codes/small-store/)** to read
+the documentation and the examples.
 
 ## Development
 
