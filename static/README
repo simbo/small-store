@@ -1,0 +1,10 @@
+<h1 id='small-store-documentation'>🗃 Small Store – Documentation</h1>
+<p>This is the generated documentation for <em>small-store</em> – a small, immutable,
+reactive and framework agnostic state store under 2KB powered by rxjs and immer
+with full typescript support.</p>
+
+<p>Visit the documentation website at <a href="https://simbo.codes/small-store">simbo.codes/small-store</a>.</p>
+
+<p>See the project repository at <a href="https://github.com/simbo/small-store">github.com/simbo/small-store</a>.</p>
+<h2 id='license-and-author'>License and Author</h2>
+<p><a href="http://simbo.mit-license.org/">MIT &copy; Simon Lepel</a></p>

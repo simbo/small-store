@@ -12,7 +12,7 @@
     <meta http-equiv="expires" content="Thu, 11 Feb 1982 0:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
 
-    <title>API Reference</title>
+    <title>Small Store</title>
 
     <link href="images/favicon-c4342ed8.ico" rel="icon" type="image/ico" />
 
@@ -288,16 +288,16 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e033bdd3.js"></script>
+    <link href="stylesheets/screen-3066af8a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-09d226c1.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-a66b523a.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;typescript&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -305,294 +305,774 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-d966a90b.png" class="logo" alt="" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="typescript">typescript</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                  </li>
-              </ul>
+            <a href="#payloads" class="toc-h1 toc-link" data-title="Payloads">Payloads</a>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#selectors" class="toc-h1 toc-link" data-title="Selectors">Selectors</a>
+          </li>
+          <li>
+            <a href="#actions-stream" class="toc-h1 toc-link" data-title="Actions Stream">Actions Stream</a>
+          </li>
+          <li>
+            <a href="#effects" class="toc-h1 toc-link" data-title="Effects">Effects</a>
+          </li>
+          <li>
+            <a href="#with-react" class="toc-h1 toc-link" data-title="with React">with React</a>
+          </li>
+          <li>
+            <a href="#with-angular" class="toc-h1 toc-link" data-title="with Angular">with Angular</a>
+          </li>
+          <li>
+            <a href="#feedback" class="toc-h1 toc-link" data-title="Feedback">Feedback</a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.com/simbo/small-store' target='_blank'>small-store on GitHub</a></li>
+            <li><a href='https://www.npmjs.com/package/small-store' target='_blank'>small-store on npm</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Install using npm:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight sh tab-shell"><code>npm <span class="nb">install</span> <span class="nt">--save</span> small-store
 </code></pre></div>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Install using yarn:</p>
 </blockquote>
+<div class="highlight"><pre class="highlight sh tab-shell"><code>yarn add small-store
+</code></pre></div>
+<p style="font-size: 1.15em; margin-bottom: 2em;">Welcome to the documentation
+for <strong>small-store</strong>, a simple but powerful state store for
+javascript projects.</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p><a href="https://www.npmjs.com/package/small-store"><img src="https://img.shields.io/npm/v/small-store?" alt="npm Package Version" /></a>
+<a href="https://www.npmjs.com/package/small-store?activeTab=dependencies"><img src="https://img.shields.io/david/simbo/small-store?label=deps" alt="Package Dependencies" /></a>
+<a href="https://coveralls.io/github/simbo/small-store"><img src="https://img.shields.io/coveralls/github/simbo/small-store" alt="Coveralls github" /></a>
+<a href="https://github.com/simbo/small-store"><img src="https://img.shields.io/badge/repo-public-87ceeb" alt="GitHub Repo" /></a>
+<a href="http://simbo.mit-license.org/"><img src="https://img.shields.io/badge/license-MIT-4cc552" alt="License MIT" /></a></p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p style="font-size: 1.15em; margin-top: 2em; font-weight: bold">Features:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>⭐️  <strong>small in size</strong><br>
+under 2KB in production build, under 1KB gzipped</p>
+
+<p>⭐️  <strong>uses well-known store practices like actions and effects</strong></p>
+
+<p>⭐️  <strong>immutable</strong><br>
+by using <a href="https://immerjs.github.io/immer/docs/introduction">immer</a></p>
+
+<p>⭐️  <strong>reactive</strong><br>
+by using <a href="https://rxjs-dev.firebaseapp.com/">rxjs</a></p>
+
+<p>⭐️  <strong>plattform agnostic</strong><br>
+can be used anywhere: browser, server, mobile or on the moon</p>
+
+<p>⭐️  <strong>framework agnostic</strong><br>
+can be used with anything: vanilla, react, preact, angular, vue or whatever you prefer</p>
+
+<p>⭐️  <strong>native typescript support</strong></p>
+
+<p>⭐️  <strong>open source and free for everybody</strong><br>
+licensed under MIT</p>
+<h1 id='getting-started'>Getting Started</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Actions</span><span class="p">,</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// state declaration</span>
+<span class="kr">interface</span> <span class="nx">CounterState</span> <span class="p">{</span>
+  <span class="nl">count</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// actions</span>
+<span class="kr">enum</span> <span class="nx">CounterAction</span> <span class="p">{</span>
+  <span class="nx">Increment</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">Decrement</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">decrement</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="c1">// action functions</span>
+<span class="kd">const</span> <span class="nx">counterActions</span><span class="p">:</span> <span class="nx">Actions</span><span class="o">&lt;</span><span class="nx">CounterState</span><span class="p">,</span> <span class="nx">CounterAction</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Increment</span><span class="p">]:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Decrement</span><span class="p">]:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// the initial state</span>
+<span class="kd">const</span> <span class="nx">initialCounterState</span><span class="p">:</span> <span class="nx">CounterState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">count</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="c1">// creating the store</span>
+<span class="kd">const</span> <span class="nx">counterStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="o">&lt;</span><span class="nx">CounterState</span><span class="p">,</span> <span class="nx">CounterAction</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="nx">initialCounterState</span><span class="p">,</span> <span class="nx">counterActions</span>
+<span class="p">);</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+
+<span class="c1">// dispatching actions</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Increment</span><span class="p">);</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Increment</span><span class="p">);</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Decrement</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// action functions</span>
+<span class="kd">const</span> <span class="nx">counterActions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">increment</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="na">decrement</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// the initial state</span>
+<span class="kd">const</span> <span class="nx">initialCounterState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">count</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="c1">// creating the store</span>
+<span class="kd">const</span> <span class="nx">counterStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="p">(</span><span class="nx">initialCounterState</span><span class="p">,</span> <span class="nx">counterActions</span><span class="p">);</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+
+<span class="c1">// dispatching actions</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">decrement</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Outputs to console:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{ count: 0 }
+{ count: 1 }
+{ count: 2 }
+{ count: 1 }
+</code></pre></div>
+<p class="subtitle">Counter Store Example</p>
+
+<p>The example code shows a simple counter store with actions to <em>increment</em> and
+<em>decrement</em> the count state.</p>
+
+<p>Using typescript, you have to create an <code>interface</code> for your state and an <code>enum</code>
+for your actions to ensure type safety.</p>
+
+<p>States can only be updated by <em>dispatching actions</em>.</p>
+
+<p>An <em>action</em> is simply a function, receiving an optional <em>payload</em> (see
+<a href="#payloads">payloads section</a>) as param.</p>
+
+<p>An action function can have two kinds of returns:</p>
+
+<ul>
+<li><p>Another callback function, receiving the current <em>state</em> as param and
+returning the complete new state.</p></li>
+<li><p>An object which is either a partial of the new state, which will be merged
+with the previous state, or a complete new state (see
+<a href="#effects">effects section</a>).</p></li>
+</ul>
+
+<p>In this example, we are returning callback functions as we need to know about
+the current state to return the new state.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+An action callback function can change the state in place without thinking about
+immutability. Under the hood of the store, <em>immer</em> takes care of these
+things.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Actions are dispatched by calling <code>Store.dispatch()</code> with the action&#39;s <em>name</em> as
+param.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p>The latest store state can be retrieved by subscribing to the observable
+<code>Store.state$</code>.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<p>Head over to the <a href="https://rxjs-dev.firebaseapp.com/guide/overview">rxjs docs</a>
+if you are not familiar with observables and subscriptions.</p>
+<h1 id='payloads'>Payloads</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Actions</span><span class="p">,</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// state declaration</span>
+<span class="kr">interface</span> <span class="nx">TodoState</span> <span class="p">{</span>
+  <span class="nl">todos</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="c1">// actions</span>
+<span class="kr">enum</span> <span class="nx">TodoAction</span> <span class="p">{</span>
+  <span class="nx">Add</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">Remove</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="c1">// action payloads declaration</span>
+<span class="kr">interface</span> <span class="nx">TodoActionPayloads</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Add</span><span class="p">]:</span> <span class="p">{</span> <span class="nl">todo</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+  <span class="p">[</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Remove</span><span class="p">]:</span> <span class="p">{</span> <span class="nl">todo</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// action functions using payload</span>
+<span class="kd">const</span> <span class="nx">todoActions</span><span class="p">:</span> <span class="nx">Actions</span><span class="o">&lt;</span><span class="nx">TodoState</span><span class="p">,</span> <span class="nx">TodoAction</span><span class="p">,</span> <span class="nx">TodoActionPayloads</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Add</span><span class="p">]:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">todo</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Remove</span><span class="p">]:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">remKey</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span> <span class="o">===</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">todo</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">remKey</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">remKey</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// the initial state</span>
+<span class="kd">const</span> <span class="nx">initialTodoState</span><span class="p">:</span> <span class="nx">TodoState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">todos</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">};</span>
+
+<span class="c1">// creating the store</span>
+<span class="kd">const</span> <span class="nx">todoStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="o">&lt;</span><span class="nx">TodoState</span><span class="p">,</span> <span class="nx">TodoAction</span><span class="p">,</span> <span class="nx">TodoActionPayloads</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="nx">initialTodoState</span><span class="p">,</span> <span class="nx">todoActions</span>
+<span class="p">);</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+
+<span class="c1">// dispatching actions</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Add</span><span class="p">,</span> <span class="p">{</span> <span class="na">todo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">eat</span><span class="dl">'</span> <span class="p">});</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Add</span><span class="p">,</span> <span class="p">{</span> <span class="na">todo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sleep</span><span class="dl">'</span> <span class="p">});</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">TodoAction</span><span class="p">.</span><span class="nx">Remove</span><span class="p">,</span> <span class="p">{</span> <span class="na">todo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">eat</span><span class="dl">'</span> <span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// actions functions using payload</span>
+<span class="kd">const</span> <span class="nx">todoActions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">add</span><span class="p">:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">todo</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="na">remove</span><span class="p">:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">remKey</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">todo</span> <span class="o">=&gt;</span> <span class="nx">todo</span> <span class="o">===</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">todo</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">remKey</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">remKey</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// the initial state</span>
+<span class="kd">const</span> <span class="nx">initialTodoState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">todos</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">};</span>
+
+<span class="c1">// creating the store</span>
+<span class="kd">const</span> <span class="nx">todoStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="p">(</span><span class="nx">initialTodoState</span><span class="p">,</span> <span class="nx">todoActions</span><span class="p">);</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+
+<span class="c1">// dispatching actions</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">todo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">eat</span><span class="dl">'</span> <span class="p">});</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">todo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sleep</span><span class="dl">'</span> <span class="p">});</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">remove</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">todo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">eat</span><span class="dl">'</span> <span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Outputs in console:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<div class="highlight"><pre class="highlight plaintext"><code>{ todos: [] }
+{ todos: ['eat'] }
+{ todos: ['eat', 'sleep'] }
+{ todos: ['sleep'] }
+</code></pre></div>
+<p class="subtitle">Todo Store Example</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>In this example, we create a todo store, keeping track of a collection of todos.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>To <em>add</em> or <em>remove</em> a todo from the collection, our action functions are using
+the <em>payload</em> param.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+<p>Again, using typescript, you have to create an <code>interface</code> to declare your
+action payloads for type safety.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>When dispatching the action via <code>Store.dispatch()</code>, we are using the action&#39;s
+<em>name</em> as first param and the action&#39;s <em>payload</em> as second param.</p>
+<h1 id='selectors'>Selectors</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Selectors</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// todo state selectors</span>
+<span class="kd">const</span> <span class="nx">todoSelectors</span><span class="p">:</span> <span class="nx">Selectors</span><span class="o">&lt;</span><span class="nx">TodoState</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allTodos</span><span class="p">:</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">,</span>
+  <span class="na">countTodos</span><span class="p">:</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+  <span class="na">firstTodo</span><span class="p">:</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="kc">null</span>
+<span class="p">}</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// filter state with selectors and log to console</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">All:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoSelectors</span><span class="p">.</span><span class="nx">allTodos</span><span class="p">(</span><span class="nx">state</span><span class="p">),</span>
+    <span class="dl">'</span><span class="se">\n</span><span class="s1">Count:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoSelectors</span><span class="p">.</span><span class="nx">countTodos</span><span class="p">(</span><span class="nx">state</span><span class="p">),</span>
+    <span class="dl">'</span><span class="se">\n</span><span class="s1">Next:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoSelectors</span><span class="p">.</span><span class="nx">firstTodo</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// todo state selectors</span>
+<span class="kd">const</span> <span class="nx">todoSelectors</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">allTodos</span><span class="p">:</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">,</span>
+  <span class="na">countTodos</span><span class="p">:</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+  <span class="na">firstTodo</span><span class="p">:</span> <span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="kc">null</span>
+<span class="p">}</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">todoStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// filter state with selectors and log to console</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">All:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoSelectors</span><span class="p">.</span><span class="nx">allTodos</span><span class="p">(</span><span class="nx">state</span><span class="p">),</span>
+    <span class="dl">'</span><span class="se">\n</span><span class="s1">Count:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoSelectors</span><span class="p">.</span><span class="nx">countTodos</span><span class="p">(</span><span class="nx">state</span><span class="p">),</span>
+    <span class="dl">'</span><span class="se">\n</span><span class="s1">Next:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">todoSelectors</span><span class="p">.</span><span class="nx">firstTodo</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Outputs in console:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>All: []
+Count: 0
+Next: null
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+All: ['eat']
+Count: 1
+Next: 'eat'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+All: ['eat', 'sleep']
+Count: 2
+Next: 'eat'
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+All: ['sleep']
+Count: 1
+Next: 'sleep'
+</code></pre></div>
+<p class="subtitle">Todo Store Example</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>Now, we are creating some <em>selectors</em> for the todo store we just created in the
+<a href="#payloads">payloads section</a>.</p>
+
+<p>A <em>selector</em> is simply a callback, receiving the <em>state</em> as param and returning
+whatever you like to select from the state.</p>
+
+<p>In this example, we&#39;re creating three selectors:</p>
+
+<ul>
+<li><code>allTodos</code> will return all todos in our collection</li>
+<li><code>countTodos</code> will return the amount of the todos in our collection</li>
+<li><code>nextTodo</code> will return the first todo from the collection</li>
+</ul>
+
+<p>Again, we are subscribing to <code>Store.state$</code>, but this time we filter the output
+using our selectors.</p>
+<h1 id='actions-stream'>Actions Stream</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="c1">// only in development</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// subscribe to the store's action stream</span>
+  <span class="nx">todoStore</span><span class="p">.</span><span class="nx">actions$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">payload</span><span class="p">,</span> <span class="nx">previousState</span><span class="p">,</span> <span class="nx">state</span> <span class="p">})</span> <span class="o">=&gt;</span>
+    <span class="c1">// log details to console</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+      <span class="dl">'</span><span class="s1">Action:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="dl">'</span><span class="se">\n</span><span class="s1">Payload:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">,</span>
+      <span class="dl">'</span><span class="se">\n</span><span class="s1">Previous State:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">previousState</span><span class="p">,</span>
+      <span class="dl">'</span><span class="se">\n</span><span class="s1">Current State:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">state</span>
+    <span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// only in development</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// subscribe to the store's action stream</span>
+  <span class="nx">todoStore</span><span class="p">.</span><span class="nx">actions$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">payload</span><span class="p">,</span> <span class="nx">previousState</span><span class="p">,</span> <span class="nx">state</span> <span class="p">})</span> <span class="o">=&gt;</span>
+    <span class="c1">// log details to console</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+      <span class="dl">'</span><span class="s1">Action:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span>
+      <span class="dl">'</span><span class="se">\n</span><span class="s1">Payload:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">,</span>
+      <span class="dl">'</span><span class="se">\n</span><span class="s1">Previous State:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">previousState</span><span class="p">,</span>
+      <span class="dl">'</span><span class="se">\n</span><span class="s1">Current State:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">state</span>
+    <span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Outputs in console:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
+<div class="highlight"><pre class="highlight plaintext"><code>Action: 'add'
+Payload: { todo: 'foo' }
+Previous State: { todos: [] }
+Current State: { todos: ['foo'] }
+
+Action: 'add',
+Payload: { todo: 'bar' },
+Previous State: { todos: ['foo'] }
+Current State: { todos: ['foo', 'bar'] }
+
+Action: 'remove'
+Payload: { todo: 'foo' }
+Previous State: { todos: ['foo', 'bar'] }
+Current State: { todos: ['bar'] }
+</code></pre></div>
+<p class="subtitle">Todo Store Example</p>
+
+<p>Now, let&#39;s debug the todo store, that we created in the <a href="#payloads">payloads section</a>.</p>
+
+<p>To achieve this, we simply subscribe to <code>Store.actions$</code>, the <em>action stream</em> of
+our store. This observable returns an object containing the <em>name</em> and the
+<em>payload</em> for every triggered action together with the <em>previous state</em> and the
+current <em>state</em>.</p>
+
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+Like subscribing to the store's state, you can also subscribe to the store's
+<em>action stream</em> anywhere within your application to react to dispatched
+actions or state changes.
 </aside>
+<h1 id='effects'>Effects</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Actions</span><span class="p">,</span> <span class="nx">Effects</span><span class="p">,</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
 
-<p>The Kittn API uses the following error codes:</p>
+<span class="c1">// state declaration</span>
+<span class="kr">interface</span> <span class="nx">WeatherState</span> <span class="p">{</span>
+  <span class="nl">location</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">weather</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
+<span class="c1">// actions</span>
+<span class="kr">enum</span> <span class="nx">WeatherAction</span> <span class="p">{</span>
+  <span class="nx">SetLocation</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">add</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">RequestWeather</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">requestWeather</span><span class="dl">'</span>
+  <span class="nx">ReceivedWeather</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">receivedWeather</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="c1">// action payloads declaration</span>
+<span class="kr">interface</span> <span class="nx">WeatherActionPayloads</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">SetLocation</span><span class="p">]:</span> <span class="p">{</span> <span class="nl">location</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+  <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">ReceivedWeather</span><span class="p">]:</span> <span class="p">{</span> <span class="nl">weather</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// action functions (returning partial states instead of callbacks)</span>
+<span class="kd">const</span> <span class="nx">weatherActions</span><span class="p">:</span> <span class="nx">Actions</span><span class="o">&lt;</span><span class="nx">WeatherState</span><span class="p">,</span> <span class="nx">WeatherAction</span><span class="p">,</span> <span class="nx">WeatherActionPayloads</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">SetLocation</span><span class="p">]:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">location</span><span class="p">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">location</span> <span class="p">};</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">ReceivedWeather</span><span class="p">]:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">weather</span><span class="p">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">weather</span> <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// effects triggered by a just dispatched action</span>
+<span class="kd">const</span> <span class="nx">weatherEffects</span><span class="p">:</span> <span class="nx">Effects</span><span class="o">&lt;</span><span class="nx">WeatherState</span><span class="p">,</span> <span class="nx">WeatherAction</span><span class="p">,</span> <span class="nx">WeatherActionPayloads</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">SetLocation</span><span class="p">]:</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">RequestWeather</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">RequestWeather</span><span class="p">]:</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="s2">`</span><span class="err">https://someweatherapi.com/location/</span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">location</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">request</span> <span class="o">=&gt;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">ReceivedWeather</span><span class="p">,</span> <span class="p">{</span> <span class="na">weather</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">weather</span> <span class="p">}));</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// the initial state</span>
+<span class="kd">const</span> <span class="nx">initialWeatherState</span><span class="p">:</span> <span class="nx">WeatherState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">location</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">weather</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// creating the store</span>
+<span class="kd">const</span> <span class="nx">weatherStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="o">&lt;</span><span class="nx">WeatherState</span><span class="p">,</span> <span class="nx">WeatherAction</span><span class="p">,</span> <span class="nx">WeatherActionPayloads</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="nx">initialWeatherState</span><span class="p">,</span> <span class="nx">weatherActions</span><span class="p">,</span> <span class="nx">weatherEffects</span>
+<span class="p">);</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">weatherStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+
+<span class="c1">// dispatching actions</span>
+<span class="nx">weatherStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">SetLocation</span><span class="p">,</span> <span class="p">{</span> <span class="na">location</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Berlin</span><span class="dl">'</span> <span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// action functions (returning partial states instead of callbacks)</span>
+<span class="kd">const</span> <span class="nx">weatherActions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">setLocation</span><span class="p">:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">location</span><span class="p">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">location</span> <span class="p">};</span>
+  <span class="p">},</span>
+  <span class="na">receivedWeather</span><span class="p">:</span> <span class="nx">payload</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="na">weather</span><span class="p">:</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">weather</span> <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// effects triggered by a just dispatched action</span>
+<span class="kd">const</span> <span class="nx">weatherEffects</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">setLocation</span><span class="p">:</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">requestWeather</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">requestWeather</span><span class="p">:</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="s2">`</span><span class="err">https://someweatherapi.com/location/</span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">location</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">request</span> <span class="o">=&gt;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">receivedWeather</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">weather</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">weather</span> <span class="p">}));</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// the initial state</span>
+<span class="kd">const</span> <span class="nx">initialWeatherState</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">location</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">weather</span><span class="p">:</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// creating the store</span>
+<span class="kd">const</span> <span class="nx">weatherStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Store</span><span class="p">(</span><span class="nx">initialWeatherState</span><span class="p">,</span> <span class="nx">weatherActions</span><span class="p">,</span> <span class="nx">weatherEffects</span><span class="p">);</span>
+
+<span class="c1">// subscribing to the store's state</span>
+<span class="nx">weatherStore</span><span class="p">.</span><span class="nx">state$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">));</span>
+
+<span class="c1">// dispatching actions</span>
+<span class="nx">weatherStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">setLocation</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">location</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Berlin</span><span class="dl">'</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Outputs in console:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{ location: null, weather: null }
+{ location: 'Berlin', weather: null }
+{ location: 'Berlin', weather: 'Sunny, 25° Celsius' }
+</code></pre></div>
+<p class="subtitle">Weather Store Example</p>
+
+<p>In this example, we create a weather store, which stores the <em>location</em> and the
+corresponding <em>weather</em> for the location. </p>
+
+<p>Everytime the location changes, the weather should be retrieved automatically
+from an external weather service, which is achieved using <em>effects</em>.</p>
+
+<p>An <em>effect</em> is a function that is triggered by a specific action. While actions
+are synchronous functions, effects can run asynchronous code and optionally
+dispatch other actions.</p>
+
+<p>You should use effects when:</p>
+
+<ul>
+<li>You need to react on an action.</li>
+<li>You need to run asynchronous or expensive code.</li>
+</ul>
+
+<p>The effects object has properties where…</p>
+
+<ul>
+<li>the key is the name of the action which triggers the effect</li>
+<li>the value is a function, receiving the <em>action</em> name and payload, the current
+<em>state</em> and the <em>dispatch</em> function to trigger new actions.</li>
+</ul>
+
+<p>In this example, we have two effects:</p>
+
+<ul>
+<li>on the <code>setLocation</code> action, the <code>requestWeather</code> action is dispatched with
+the new location state as payload.</li>
+<li>on the <code>requestWeather</code> action, the external weather service is called and
+when the weather request is done, the <code>receivedWeather</code> action is called
+with the received weather status as payload.</li>
+</ul>
+
+<p>Notice, how the <code>requestWeather</code> action doesn&#39;t need a corresponding function in
+<code>weatherActions</code> as it doesn&#39;t change the state and only triggers an effect.</p>
+
+<p>Also notice, how the action functions are returning partial state objects
+instead of callbacks. As our state changes don&#39;t need to know about the previous
+state, we can use this simplification.</p>
+<h1 id='with-react'>with React</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="c1">// creating the store context</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">CounterStoreContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">(</span><span class="nx">initialCounterState</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// creating the store context</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">CounterStoreContext</span> <span class="o">=</span> <span class="nx">createContext</span><span class="p">(</span><span class="nx">initialCounterState</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>App component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight jsx tab-jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">h</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CounterStoreContext</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./counter-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">App</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">counterStateSubscription</span> <span class="o">=</span> <span class="nx">counterStore</span><span class="p">.</span><span class="nx">state$</span>
+    <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">counterState</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="nx">counterState</span> <span class="p">}));</span>
+
+  <span class="nx">componentWillUnmount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">counterStateSubscription</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nc">CounterStoreContext</span><span class="p">.</span><span class="nc">Provider</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">counterState</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">SomeThing</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">OtherThing</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">CounterStoreContext</span><span class="p">.</span><span class="nc">Provider</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Some component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight jsx tab-jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">h</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">counterStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./counter-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SomeThing</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">increment</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">increment</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">decrement</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">decrement</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">increment</span><span class="si">}</span><span class="p">&gt;</span>Increment<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">decrement</span><span class="si">}</span><span class="p">&gt;</span>Decrement<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Other component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight jsx tab-jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">h</span><span class="p">,</span> <span class="nx">useContext</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CounterStoreContext</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./counter-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">OtherThing</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">counterState</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">CounterStoreContext</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">counterState</span><span class="p">.</span><span class="nx">count</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Alternatively:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight jsx tab-jsx"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">h</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CounterStoreContext</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./counter-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">OtherThing</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nc">CounterStoreContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">counterState</span> <span class="o">=&gt;</span> <span class="nx">counterState</span><span class="p">.</span><span class="nx">count</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nc">CounterStoreContext</span><span class="p">.</span><span class="nc">Consumer</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To use small-store with React or Preact, we simply use the frameworks&#39; context
+feature.</p>
+
+<p>Let&#39;s reuse the counter store, we created in the <a href="#getting-started">&quot;getting started&quot; section</a>.</p>
+
+<p>Additionally to the things we already created, we create a context for the store
+state using <code>createContext</code>.</p>
+
+<p>We update the context value by simply subscribing to the state in our app
+component, like you can see in the example code.</p>
+
+<p>Later within other components you can dispatch actions or use the context to
+read and use values from the store state.</p>
+<h1 id='with-angular'>with Angular</h1><div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Store</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">small-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// creating the store as injectable</span>
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CounterStore</span> <span class="kd">extends</span> <span class="nx">Store</span><span class="o">&lt;</span><span class="nx">CounterState</span><span class="p">,</span> <span class="nx">CounterAction</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">initialCounterState</span><span class="p">,</span> <span class="nx">counterActions</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// you need to use typescript for angular. 😉</span>
+</code></pre></div>
+<blockquote>
+<p>Some component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CounterAction</span><span class="p">,</span> <span class="nx">CounterStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./counter-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">some-thing</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`</span><span class="err">
+    &lt;button (click)="increment()"&gt;Increment&lt;/button&gt;
+    &lt;button (click)="decrement()"&gt;Decrement&lt;/button&gt;
+  </span><span class="s2">`</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">SomeThingComponent</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">public</span> <span class="k">readonly</span> <span class="nx">counterStore</span><span class="p">:</span> <span class="nx">CounterStore</span>
+  <span class="p">)</span> <span class="p">{}</span>
+
+  <span class="k">public</span> <span class="nx">increment</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Increment</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nx">decrement</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">counterStore</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">CounterAction</span><span class="p">.</span><span class="nx">Decrement</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// you need to use typescript for angular. 😉</span>
+</code></pre></div>
+<blockquote>
+<p>Other component:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight typescript tab-typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CounterStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./counter-store</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">other-thing</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`</span><span class="err">
+    &lt;div&gt;{{ (counterStore.state</span><span class="s2">$</span><span class="err"> | async).count }}&lt;/div&gt;
+  </span><span class="s2">`</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CounterComponent</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">public</span> <span class="k">readonly</span> <span class="nx">counterStore</span><span class="p">:</span> <span class="nx">CounterStore</span>
+  <span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">// you need to use typescript for angular. 😉</span>
+</code></pre></div>
+<p>To use small-store with Angular, we simply create an injectable store.</p>
+
+<p>Let&#39;s reuse the counter store, we created in the <a href="#getting-started">&quot;getting started&quot; section</a>.</p>
+
+<p>Instead of instantiating the store directly, we create a <code>CounterStore</code> class,
+which extends the <code>Store</code> class. By adding the <code>@Injectable</code> decorator, we can
+inject the store into other things.</p>
+
+<p>Within any component or service you can now either dispatch store actions or
+subscribe to the state or the actions stream, like you can see it in the example
+code.</p>
+<h1 id='feedback'>Feedback</h1>
+<p>Now that you have read the whole documentation, you should be able to use
+small-store within your project.</p>
+
+<p>If you like this software, please give it a <a href="https://github.com/simbo/small-store">star on GitHub</a>.</p>
+
+<p>Do you have any questions or problems? Need more explanation?<br>
+Head over to GitHub and <a href="https://github.com/simbo/small-store/issues">create an issue</a>.</p>
+
+<p>Have fun! 🦄</p>
+
+<div style="height:12em"></div>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="typescript">typescript</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
