@@ -13,18 +13,18 @@ enum SimpleAction {
   Noop = 'noop'
 }
 
-interface SimplePayload {
+interface SimplePayloads {
   [SimpleAction.Update]: { [key: string]: any };
 }
 
-function createSimpleStore(): Store<SimpleState, SimpleAction, SimplePayload> {
+function createSimpleStore(): Store<SimpleState, SimpleAction, SimplePayloads> {
   const initialState: SimpleState = {};
 
-  const simpleActions: Actions<SimpleState, SimpleAction, SimplePayload> = {
+  const simpleActions: Actions<SimpleState, SimpleAction, SimplePayloads> = {
     [SimpleAction.Update]: payload => payload
   };
 
-  return new Store<SimpleState, SimpleAction, SimplePayload>(initialState, simpleActions);
+  return new Store<SimpleState, SimpleAction, SimplePayloads>(initialState, simpleActions);
 }
 
 test('[simple store] instantiation', () => {

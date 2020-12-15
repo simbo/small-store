@@ -15,19 +15,19 @@ enum SavedContentAction {
   FinishSave = 'finishSave'
 }
 
-interface SavedContentActionPayload {
+interface SavedContentActionPayloads {
   [SavedContentAction.Set]: { content: string };
   [SavedContentAction.StartSave]: { content: string };
   [SavedContentAction.FinishSave]: { content: string };
 }
 
-function createSavedContentStore(): Store<SavedContentState, SavedContentAction, SavedContentActionPayload> {
+function createSavedContentStore(): Store<SavedContentState, SavedContentAction, SavedContentActionPayloads> {
   const initialState: SavedContentState = {
     content: '',
     saved: true
   };
 
-  const contentActions: Actions<SavedContentState, SavedContentAction, SavedContentActionPayload> = {
+  const contentActions: Actions<SavedContentState, SavedContentAction, SavedContentActionPayloads> = {
     [SavedContentAction.Set]: payload => state => {
       state.content = payload.content;
       state.saved = false;
@@ -41,14 +41,14 @@ function createSavedContentStore(): Store<SavedContentState, SavedContentAction,
 
   const saveContent = async (content: string) => new Promise(resolve => setTimeout(resolve, 100));
 
-  const contentEffects: Effects<SavedContentState, SavedContentAction, SavedContentActionPayload> = {
+  const contentEffects: Effects<SavedContentState, SavedContentAction, SavedContentActionPayloads> = {
     [SavedContentAction.Set]: (action, { content }, dispatch) => dispatch(SavedContentAction.StartSave, { content }),
     [SavedContentAction.StartSave]: (action, { content }, dispatch) => {
       saveContent(content).then(() => dispatch(SavedContentAction.FinishSave, { content }));
     }
   };
 
-  return new Store<SavedContentState, SavedContentAction, SavedContentActionPayload>(
+  return new Store<SavedContentState, SavedContentAction, SavedContentActionPayloads>(
     initialState,
     contentActions,
     contentEffects

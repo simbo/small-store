@@ -13,17 +13,17 @@ enum TodoAction {
   Remove = 'remove'
 }
 
-interface TodoActionPayload {
+interface TodoActionPayloads {
   [TodoAction.Add]: { todo: string };
   [TodoAction.Remove]: { todo: string };
 }
 
-function createTodoStore(): Store<TodoState, TodoAction, TodoActionPayload> {
+function createTodoStore(): Store<TodoState, TodoAction, TodoActionPayloads> {
   const initialState: TodoState = {
     todos: []
   };
 
-  const todoActions: Actions<TodoState, TodoAction, TodoActionPayload> = {
+  const todoActions: Actions<TodoState, TodoAction, TodoActionPayloads> = {
     [TodoAction.Add]: payload => state => {
       state.todos.push(payload.todo);
       return state;
@@ -35,7 +35,7 @@ function createTodoStore(): Store<TodoState, TodoAction, TodoActionPayload> {
     }
   };
 
-  return new Store<TodoState, TodoAction, TodoActionPayload>(initialState, todoActions);
+  return new Store<TodoState, TodoAction, TodoActionPayloads>(initialState, todoActions);
 }
 
 test('[todo store] instantiation', () => {
