@@ -1,3 +1,6 @@
 /dist
 /coverage
 /.eslintrc.js
+/jest.config.js
+/docs
+/docs-build
