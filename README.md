@@ -13,9 +13,10 @@
 
 ---
 
-## About
+## Documentation
 
-Documentation is in progress. See tests until it's finished.
+Visit [simbo.codes/small-store](https://simbo.codes/small-store/) to read the
+documentation and the examples.
 
 ## Development
 

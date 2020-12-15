@@ -16,7 +16,7 @@
     "vue",
     "vanilla"
   ],
-  "homepage": "https://github.com/simbo/small-store#readme",
+  "homepage": "https://simbo.codes/small-store",
   "repository": "github:simbo/small-store",
   "bugs": "https://github.com/simbo/small-store/issues",
   "source": "src/small-store.ts",
