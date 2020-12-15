@@ -18,6 +18,9 @@ jobs:
       - name: 👷‍♂️  Build
         run: docker run --rm --name slate -v $(pwd)/docs-build:/srv/slate/build -v $(pwd)/docs:/srv/slate/source slatedocs/slate
 
+      - name: 📝  Copy README for gh-pages
+        run: cp -f docs/static/README.md docs-build/README.md
+
       - name: 🚚  Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
