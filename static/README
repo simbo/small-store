@@ -1,7 +1,7 @@
 <h1 id='small-store-documentation'>🗃 Small Store – Documentation</h1>
 <p>This is the generated documentation for <em>small-store</em> – a small, immutable,
 reactive and framework agnostic state store under 2KB powered by rxjs and immer
-with full typescript support.</p>
+with native typescript support.</p>
 
 <p>Visit the documentation website at <a href="https://simbo.codes/small-store">simbo.codes/small-store</a>.</p>
 

@@ -2,7 +2,7 @@
 
 This is the generated documentation for _small-store_ – a small, immutable,
 reactive and framework agnostic state store under 2KB powered by rxjs and immer
-with full typescript support.
+with native typescript support.
 
 Visit the documentation website at [simbo.codes/small-store](https://simbo.codes/small-store).
 
