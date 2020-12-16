@@ -8,7 +8,7 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-4cc552)](http://simbo.mit-license.org/)
 
 > A small, immutable, reactive and framework agnostic state store under 2KB
-> powered by rxjs and immer with full typescript support. To be used with
+> powered by rxjs and immer with native typescript support. To be used with
 > vanilla, react, preact, angular, vue or whatever you like.
 
 ---

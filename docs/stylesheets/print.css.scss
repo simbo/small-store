@@ -46,7 +46,8 @@ body {
   pre,
   code {
     @extend %code-font;
-    @extend %break-words;
+    word-break: break-all;
+    hyphens: auto;
     border: 1px solid $print-color;
     border-radius: 5px;
     font-size: 0.8em;

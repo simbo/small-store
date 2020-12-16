@@ -53,7 +53,7 @@ Current State: { todos: ['bar'] }
 
 <p class="subtitle">Todo Store Example</p>
 
-Now, let's debug the todo store, that we created in the [payloads section](#payloads).
+Now, let's debug the todo store, which we created in the [payloads section](#payloads).
 
 To achieve this, we simply subscribe to `Store.actions$`, the _action stream_ of
 our store. This observable returns an object containing the _name_ and the

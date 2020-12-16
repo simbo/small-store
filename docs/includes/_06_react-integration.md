@@ -99,7 +99,7 @@ Additionally to the things we already created, we create a context for the store
 state using `createContext`.
 
 We update the context value by simply subscribing to the state in our app
-component, like you can see in the example code.
+component, as you can see in the example code.
 
 Later within other components you can dispatch actions or use the context to
 read and use values from the store state.

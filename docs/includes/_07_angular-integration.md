@@ -81,5 +81,5 @@ which extends the `Store` class. By adding the `@Injectable` decorator, we can
 inject the store into other things.
 
 Within any component or service you can now either dispatch store actions or
-subscribe to the state or the actions stream, like you can see it in the example
+subscribe to the state or the actions stream, as you can see it in the example
 code.
