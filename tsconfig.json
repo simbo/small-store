@@ -18,6 +18,7 @@
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
+    "strictPropertyInitialization": true,
     "stripInternal": true,
     "target": "esnext"
   },
