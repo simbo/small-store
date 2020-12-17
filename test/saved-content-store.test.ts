@@ -39,7 +39,7 @@ function createSavedContentStore(): Store<SavedContentState, SavedContentAction,
     }
   };
 
-  const saveContent = async (content: string) => new Promise(resolve => setTimeout(resolve, 100));
+  const saveContent = async (content: string): Promise<void> => new Promise(resolve => setTimeout(resolve, 100));
 
   const contentEffects: Effects<SavedContentState, SavedContentAction, SavedContentActionPayloads> = {
     [SavedContentAction.Set]: (action, { content }, dispatch) => dispatch(SavedContentAction.StartSave, { content }),
@@ -71,8 +71,11 @@ test('[content store] state', done => {
   let i = 0;
   store.state$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(SavedContentAction.Set, { content: 'foo' });
   store.dispatch(SavedContentAction.Set, { content: 'bar' });
@@ -121,8 +124,11 @@ test('[content store] actions', done => {
   let i = 0;
   store.actions$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(SavedContentAction.Set, { content: 'foo' });
   store.dispatch(SavedContentAction.Set, { content: 'bar' });

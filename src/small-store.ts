@@ -89,7 +89,9 @@ export class Store<STATE, ACTION extends string, PAYLOAD extends ActionPayload<A
 
   // @internal
   private nextAction(): void {
-    if (this.actionInProgress || !this.actionsQueue.length) return;
+    if (this.actionInProgress || !this.actionsQueue.length) {
+      return;
+    }
     this.actionInProgress = true;
     this.state$.pipe(take(1)).subscribe(state => {
       const { name, payload } = this.actionsQueue.shift() as ActionMeta<ACTION, PAYLOAD>;
@@ -114,7 +116,8 @@ export class Store<STATE, ACTION extends string, PAYLOAD extends ActionPayload<A
 
   // @internal
   private runEffect(name: ACTION, payload: PAYLOAD[ACTION], state: STATE): void {
-    if (this.effects && this.effects[name])
+    if (this.effects && this.effects[name]) {
       (this.effects[name] as EffectHandler<STATE, ACTION, PAYLOAD>)({ name, payload }, state, this.dispatchImmediately);
+    }
   }
 }

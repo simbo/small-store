@@ -43,8 +43,11 @@ test('[counter store] state', done => {
   let i = 0;
   store.state$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(CounterAction.Increment);
   store.dispatch(CounterAction.Decrement);
@@ -59,8 +62,11 @@ test('[counter store] actions', done => {
   let i = 0;
   store.actions$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(CounterAction.Increment);
   store.dispatch(CounterAction.Decrement);

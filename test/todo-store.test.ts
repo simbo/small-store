@@ -30,7 +30,9 @@ function createTodoStore(): Store<TodoState, TodoAction, TodoActionPayloads> {
     },
     [TodoAction.Remove]: payload => state => {
       const remKey = state.todos.findIndex(todo => todo === payload.todo);
-      if (remKey >= 0) state.todos.splice(remKey, 1);
+      if (remKey >= 0) {
+        state.todos.splice(remKey, 1);
+      }
       return state;
     }
   };
@@ -49,8 +51,11 @@ test('[todo store] state', done => {
   let i = 0;
   store.state$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(TodoAction.Add, { todo: 'foo' });
   store.dispatch(TodoAction.Add, { todo: 'bar' });
@@ -82,8 +87,11 @@ test('[todo store] actions', done => {
   let i = 0;
   store.actions$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(TodoAction.Add, { todo: 'foo' });
   store.dispatch(TodoAction.Add, { todo: 'bar' });
@@ -97,11 +105,17 @@ test('[todo store] immutability', done => {
   let i = 0;
   store.state$.subscribe(result => {
     expect(result).toEqual(results[i]);
-    if (i === 0) expect(prevState).toBeUndefined();
-    else expect(prevState).toEqual(results[i - 1]);
+    if (i === 0) {
+      expect(prevState).toBeUndefined();
+    } else {
+      expect(prevState).toEqual(results[i - 1]);
+    }
     prevState = result;
-    if (i === results.length - 1) done();
-    else i++;
+    if (i === results.length - 1) {
+      done();
+    } else {
+      i++;
+    }
   });
   store.dispatch(TodoAction.Add, { todo: 'foo' });
   store.dispatch(TodoAction.Add, { todo: 'bar' });
