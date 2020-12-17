@@ -148,5 +148,5 @@ Notice, how the `requestWeather` action doesn't need a corresponding function in
 `weatherActions` as it doesn't change the state and only triggers an effect.
 
 Also notice, how the action functions are returning partial state objects
-instead of callbacks. As our state changes don't need to know about the previous
-state, we can use this simplification.
+instead of callbacks. As we don't need to know about the previous
+state for our state changes, we can use this simplification.
