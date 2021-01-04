@@ -29,13 +29,13 @@ code_clipboard: true
 > Install using npm:
 
 ```sh
-npm install --save small-store
+npm install --save small-store rxjs
 ```
 
 > Install using yarn:
 
 ```sh
-yarn add small-store
+yarn add small-store rxjs
 ```
 
 <p style="font-size: 1.15em; margin-bottom: 2em;">Welcome to the documentation
@@ -59,7 +59,8 @@ under 2KB in production build, under 1KB gzipped
 by using [immer](https://immerjs.github.io/immer/docs/introduction)
 
 ⭐️  **reactive**  
-by using [rxjs](https://rxjs-dev.firebaseapp.com/)
+by using [rxjs](https://rxjs-dev.firebaseapp.com/) (as peerDependency to avoid
+version conflicts and keep your bundles small)
 
 ⭐️  **plattform agnostic**  
 can be used anywhere: browser, server, mobile or on the moon
