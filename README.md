@@ -13,6 +13,53 @@
 
 ---
 
+## Quick Start
+
+```typescript
+import { Actions, Store } from 'small-store';
+
+// state declaration
+interface CounterState {
+  count: number;
+}
+
+// actions
+enum CounterAction {
+  Increment = 'increment',
+  Decrement = 'decrement'
+}
+
+// action functions
+const counterActions: Actions<CounterState, CounterAction> = {
+  [CounterAction.Increment]: () => state => {
+    state.count++;
+    return state;
+  },
+  [CounterAction.Decrement]: () => state => {
+    state.count--;
+    return state;
+  }
+};
+
+// the initial state
+const initialCounterState: CounterState = {
+  count: 0
+};
+
+// creating the store
+const counterStore = new Store<CounterState, CounterAction>(initialCounterState, counterActions);
+
+// subscribing to the store's state
+counterStore.state$.subscribe(state => console.log(state));
+
+// dispatching actions
+counterStore.dispatch(CounterAction.Increment);
+counterStore.dispatch(CounterAction.Increment);
+counterStore.dispatch(CounterAction.Decrement);
+```
+
+See details and more examples in the [docs](https://simbo.codes/small-store/).
+
 ## Documentation
 
 Visit **[simbo.codes/small-store](https://simbo.codes/small-store/)** to read
