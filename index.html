@@ -352,12 +352,12 @@
 <blockquote>
 <p>Install using npm:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight sh tab-shell"><code>npm <span class="nb">install</span> <span class="nt">--save</span> small-store
+<div class="highlight"><pre class="highlight sh tab-shell"><code>npm <span class="nb">install</span> <span class="nt">--save</span> small-store rxjs
 </code></pre></div>
 <blockquote>
 <p>Install using yarn:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight sh tab-shell"><code>yarn add small-store
+<div class="highlight"><pre class="highlight sh tab-shell"><code>yarn add small-store rxjs
 </code></pre></div>
 <p style="font-size: 1.15em; margin-bottom: 2em;">Welcome to the documentation
 for <strong>small-store</strong>, a simple but powerful state store for
@@ -380,7 +380,8 @@ under 2KB in production build, under 1KB gzipped</p>
 by using <a href="https://immerjs.github.io/immer/docs/introduction">immer</a></p>
 
 <p>⭐️  <strong>reactive</strong><br>
-by using <a href="https://rxjs-dev.firebaseapp.com/">rxjs</a></p>
+by using <a href="https://rxjs-dev.firebaseapp.com/">rxjs</a> (as peerDependency to avoid
+version conflicts and keep your bundles small)</p>
 
 <p>⭐️  <strong>plattform agnostic</strong><br>
 can be used anywhere: browser, server, mobile or on the moon</p>
