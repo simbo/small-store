@@ -257,8 +257,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -387,7 +390,8 @@ version conflicts and keep your bundles small)</p>
 can be used anywhere: browser, server, mobile or on the moon</p>
 
 <p>⭐️  <strong>framework agnostic</strong><br>
-can be used with anything: vanilla, react, preact, angular, vue or whatever you prefer</p>
+can be used with anything: vanilla, react, preact, angular, vue or whatever you
+prefer</p>
 
 <p>⭐️  <strong>native typescript support</strong></p>
 
@@ -781,7 +785,7 @@ actions or state changes.
     <span class="nx">dispatch</span><span class="p">(</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">RequestWeather</span><span class="p">);</span>
   <span class="p">},</span>
   <span class="p">[</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">RequestWeather</span><span class="p">]:</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">fetch</span><span class="p">(</span><span class="s2">`</span><span class="err">https://someweatherapi.com/location/</span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">location</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://someweatherapi.com/location/</span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">location</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">request</span> <span class="o">=&gt;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
       <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="nx">WeatherAction</span><span class="p">.</span><span class="nx">ReceivedWeather</span><span class="p">,</span> <span class="p">{</span> <span class="na">weather</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">weather</span> <span class="p">}));</span>
     <span class="p">);</span>
@@ -822,7 +826,7 @@ actions or state changes.
     <span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">requestWeather</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">},</span>
   <span class="na">requestWeather</span><span class="p">:</span> <span class="p">(</span><span class="nx">action</span><span class="p">,</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">fetch</span><span class="p">(</span><span class="s2">`</span><span class="err">https://someweatherapi.com/location/</span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">location</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="s2">`https://someweatherapi.com/location/</span><span class="p">${</span><span class="nx">state</span><span class="p">.</span><span class="nx">location</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
       <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">request</span> <span class="o">=&gt;</span> <span class="nx">request</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
       <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">json</span> <span class="o">=&gt;</span> <span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">receivedWeather</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">weather</span><span class="p">:</span> <span class="nx">json</span><span class="p">.</span><span class="nx">weather</span> <span class="p">}));</span>
     <span class="p">);</span>
@@ -1008,10 +1012,10 @@ read and use values from the store state.</p>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
   <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">some-thing</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s2">`</span><span class="err">
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`
     &lt;button (click)="increment()"&gt;Increment&lt;/button&gt;
     &lt;button (click)="decrement()"&gt;Decrement&lt;/button&gt;
-  </span><span class="s2">`</span>
+  `</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">SomeThingComponent</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span>
@@ -1036,9 +1040,9 @@ read and use values from the store state.</p>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
   <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">other-thing</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s2">`</span><span class="err">
-    &lt;div&gt;{{ (counterStore.state</span><span class="s2">$</span><span class="err"> | async).count }}&lt;/div&gt;
-  </span><span class="s2">`</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`
+    &lt;div&gt;{{ (counterStore.state$ | async).count }}&lt;/div&gt;
+  `</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">CounterComponent</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span>
