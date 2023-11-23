@@ -2,29 +2,30 @@ name: Docs Deploy
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  docs:
+    runs-on: ubuntu-22.04
 
     steps:
-      - name: 🛎  Checkout
-        uses: actions/checkout@v2
+      - name: 🛎 Checkout
+        uses: actions/checkout@v4
 
-      - name: 📦  Pull Docker Image
+      - name: 📦 Pull Docker Image
         run: docker pull slatedocs/slate
 
-      - name: 📂  Create Folder for docs-build
+      - name: 📂 Create Folder for docs-build
         run: rm -rf docs-build && mkdir docs-build
 
-      - name: 👷‍♂️  Build
+      - name: 👷‍♂️ Build
         run: docker run --rm --name slate -v $(pwd)/docs-build:/srv/slate/build -v $(pwd)/docs:/srv/slate/source slatedocs/slate
 
-      - name: 📝  Copy README for gh-pages
+      - name: 📝 Copy README for gh-pages
         run: cp -f docs/static/README.md docs-build/README.md
 
-      - name: 🚚  Deploy to gh-pages
+      - name: 🚚 Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           BRANCH: gh-pages
