@@ -6,8 +6,10 @@ language_tabs:
   - javascript
 
 toc_footers:
-  - <a href='https://github.com/simbo/small-store' target='_blank'>small-store on GitHub</a>
-  - <a href='https://www.npmjs.com/package/small-store' target='_blank'>small-store on npm</a>
+  - <a href='https://github.com/simbo/small-store' target='_blank'>small-store
+    on GitHub</a>
+  - <a href='https://www.npmjs.com/package/small-store'
+    target='_blank'>small-store on npm</a>
 
 includes:
   - 01_getting-started
@@ -66,7 +68,8 @@ version conflicts and keep your bundles small)
 can be used anywhere: browser, server, mobile or on the moon
 
 ⭐️  **framework agnostic**  
-can be used with anything: vanilla, react, preact, angular, vue or whatever you prefer
+can be used with anything: vanilla, react, preact, angular, vue or whatever you
+prefer
 
 ⭐️  **native typescript support**
 

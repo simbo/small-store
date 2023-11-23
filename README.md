@@ -1,9 +1,9 @@
 # 🗃 Small Store
 
 [![npm Package Version](https://img.shields.io/npm/v/small-store?)](https://www.npmjs.com/package/small-store)
-[![Package Dependencies](https://img.shields.io/david/simbo/small-store?label=deps)](https://www.npmjs.com/package/small-store?activeTab=dependencies)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/small-store)
 [![Coveralls github](https://img.shields.io/coveralls/github/simbo/small-store)](https://coveralls.io/github/simbo/small-store)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/simbo/small-store/CI/master)](https://github.com/simbo/small-store/actions?query=workflow%3ACI)
+[![Last CI Workflow Status](https://img.shields.io/github/actions/workflow/status/simbo/small-store/ci.yml?branch=master)](https://github.com/simbo/small-store/actions?query=workflow%3ACI)
 [![GitHub Repo](https://img.shields.io/badge/repo-public-87ceeb)](https://github.com/simbo/small-store)
 [![License MIT](https://img.shields.io/badge/license-MIT-4cc552)](http://simbo.mit-license.org/)
 
@@ -47,7 +47,10 @@ const initialCounterState: CounterState = {
 };
 
 // creating the store
-const counterStore = new Store<CounterState, CounterAction>(initialCounterState, counterActions);
+const counterStore = new Store<CounterState, CounterAction>(
+  initialCounterState,
+  counterActions
+);
 
 // subscribing to the store's state
 counterStore.state$.subscribe(state => console.log(state));

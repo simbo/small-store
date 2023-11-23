@@ -39,12 +39,13 @@ function createSavedContentStore(): Store<SavedContentState, SavedContentAction,
     }
   };
 
-  const saveContent = async (content: string): Promise<void> => new Promise(resolve => setTimeout(resolve, 100));
+  const saveContent = async (content: string): Promise<string> =>
+    new Promise(resolve => setTimeout(() => resolve(content), 100));
 
   const contentEffects: Effects<SavedContentState, SavedContentAction, SavedContentActionPayloads> = {
     [SavedContentAction.Set]: (action, { content }, dispatch) => dispatch(SavedContentAction.StartSave, { content }),
     [SavedContentAction.StartSave]: (action, { content }, dispatch) => {
-      saveContent(content).then(() => dispatch(SavedContentAction.FinishSave, { content }));
+      saveContent(content).then(_content => dispatch(SavedContentAction.FinishSave, { content: _content }));
     }
   };
 

@@ -1,12 +1,12 @@
-import produce from 'immer';
+import { produce } from 'immer';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, take } from 'rxjs/operators';
 
 export type ActionPayload<ACTION extends string> = {
-  [KEY in ACTION]?: { [key: string]: any };
+  [KEY in ACTION]?: { [key: string]: unknown };
 };
 
-export interface ActionMeta<ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> {
+export interface ActionMeta<ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = object> {
   name: ACTION;
   payload: PAYLOAD[ACTION];
 }
@@ -15,27 +15,27 @@ export type ActionHandler<STATE, PAYLOAD> =
   | ((payload: PAYLOAD | never) => (state: STATE) => STATE)
   | ((payload: PAYLOAD | never) => Partial<STATE>);
 
-export type Actions<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = {
+export type Actions<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = object> = {
   [KEY in ACTION]?: ActionHandler<STATE, PAYLOAD[KEY]>;
 };
 
-export type EffectHandler<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = (
+export type EffectHandler<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = object> = (
   action: ActionMeta<ACTION, PAYLOAD>,
   state: STATE,
   dispatch: (action: ACTION, payload?: PAYLOAD[ACTION]) => void
 ) => void;
 
-export type Effects<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> = {
+export type Effects<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = object> = {
   [KEY in ACTION]?: EffectHandler<STATE, ACTION, PAYLOAD>;
 };
 
-export type Selector<STATE> = (state: STATE) => any;
+export type Selector<STATE> = (state: STATE) => unknown;
 
 export interface Selectors<STATE> {
   [key: string]: Selector<STATE>;
 }
 
-export class Store<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = {}> {
+export class Store<STATE, ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = object> {
   // @internal
   public readonly initialState: STATE;
 
@@ -89,7 +89,7 @@ export class Store<STATE, ACTION extends string, PAYLOAD extends ActionPayload<A
 
   // @internal
   private nextAction(): void {
-    if (this.actionInProgress || !this.actionsQueue.length) {
+    if (this.actionInProgress || this.actionsQueue.length === 0) {
       return;
     }
     this.actionInProgress = true;

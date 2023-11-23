@@ -29,7 +29,7 @@ function createTodoStore(): Store<TodoState, TodoAction, TodoActionPayloads> {
       return state;
     },
     [TodoAction.Remove]: payload => state => {
-      const remKey = state.todos.findIndex(todo => todo === payload.todo);
+      const remKey = state.todos.indexOf(payload.todo);
       if (remKey >= 0) {
         state.todos.splice(remKey, 1);
       }
