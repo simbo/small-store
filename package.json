@@ -33,6 +33,7 @@
     "README.md"
   ],
   "scripts": {
+    "browserslist:update": "npx --yes update-browserslist-db@latest",
     "build:watch": "microbundle watch",
     "build": "microbundle",
     "clean:coverage": "rm -rf ./coverage",
@@ -45,7 +46,6 @@
     "format:fix": "prettier --write .",
     "lint": "eslint \"**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
-    "postinstall": "npx --yes update-browserslist-db@latest",
     "prebuild:watch": "npm run clean",
     "prebuild": "npm run clean",
     "predocs:build": "npm run clean:docs",
