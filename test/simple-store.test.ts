@@ -5,7 +5,7 @@
 import { Actions, Store } from '../src/small-store';
 
 interface SimpleState {
-  [key: string]: unknown;
+  [key: string]: any;
 }
 
 enum SimpleAction {
@@ -14,7 +14,7 @@ enum SimpleAction {
 }
 
 interface SimplePayloads {
-  [SimpleAction.Update]: { [key: string]: unknown };
+  [SimpleAction.Update]: { [key: string]: any };
 }
 
 function createSimpleStore(): Store<SimpleState, SimpleAction, SimplePayloads> {

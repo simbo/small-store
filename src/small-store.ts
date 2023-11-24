@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, take } from 'rxjs/operators';
 
 export type ActionPayload<ACTION extends string> = {
-  [KEY in ACTION]?: { [key: string]: unknown };
+  [KEY in ACTION]?: { [key: string]: any };
 };
 
 export interface ActionMeta<ACTION extends string, PAYLOAD extends ActionPayload<ACTION> = object> {
@@ -29,7 +29,7 @@ export type Effects<STATE, ACTION extends string, PAYLOAD extends ActionPayload<
   [KEY in ACTION]?: EffectHandler<STATE, ACTION, PAYLOAD>;
 };
 
-export type Selector<STATE> = (state: STATE) => unknown;
+export type Selector<STATE> = (state: STATE) => any;
 
 export interface Selectors<STATE> {
   [key: string]: Selector<STATE>;

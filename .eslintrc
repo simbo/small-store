@@ -15,8 +15,9 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "unicorn/consistent-function-scoping": ["error", { "checkArrowFunctions": false }],
+    "@typescript-eslint/no-explicit-any": "off",
     "no-console": "warn",
+    "unicorn/consistent-function-scoping": ["error", { "checkArrowFunctions": false }],
     "unicorn/no-array-for-each": "off",
     "unicorn/no-array-reduce": "off",
     "unicorn/no-for-loop": "off",
